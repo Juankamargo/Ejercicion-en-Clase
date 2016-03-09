@@ -7,14 +7,14 @@ public class UniversidadDeAntioquia {
     public static void main(String[] args) {
         java.util.Scanner l = new java.util.Scanner(System.in);
         int h;
+        HashMap<String, Familia> familias = new HashMap<>();
+        HashMap<String, Persona> personas = new HashMap<String, Persona>();
         do {
             System.out.println("Desea: ");
             System.out.println("1. Ingresar una nueva familia");
             System.out.println("2. Consultar Familia");
             System.out.println("3. Consultar miembro se familia");
             int a = l.nextInt();
-            HashMap<String, Familia> familias = new HashMap<>();
-            HashMap<String, Persona> personas = new HashMap<String, Persona>();
             Familia f = new Familia();
             switch (a) {
                 case 1: {
@@ -100,8 +100,7 @@ public class UniversidadDeAntioquia {
                             System.out.println("Segundo hijo: "+z.getN2());
                             System.out.println("sexo:"+z.getSexo2()+"\nEdad: "+z.getEdad2());
                         }
-                        else{
-                            if(z.getParentesco(no)=="Segundo hijo"){
+                        else if(z.getParentesco(no)=="Segundo hijo"){
                             System.out.println("Madre: "+z.getNmadre());
                             System.out.println("sexo: Femenino\nEdad: "+z.getEdadm());
                             System.out.println("Padre: "+z.getNpadre());
@@ -109,14 +108,13 @@ public class UniversidadDeAntioquia {
                             System.out.println("Hermano/a: "+z.getN1());
                             System.out.println("sexo:"+z.getSexo1()+"\nEdad: "+z.getEdad1());
                             }
-                            else{
-                                System.out.println("Madre: "+z.getNmadre());
+                        else if (z.getParentesco(no)=="Primer hijo"){
+                            System.out.println("Madre: "+z.getNmadre());
                             System.out.println("sexo: Femenino\nEdad: "+z.getEdadm());
                             System.out.println("Padre: "+z.getNpadre());
                             System.out.println("sexo: Masculino\nEdad: "+z.getEdadp());
                             System.out.println("Hermano/a: "+z.getN2());
                             System.out.println("sexo:"+z.getSexo2()+"\nEdad: "+z.getEdad2());
-                            }
                         }
                     }
                     else {System.out.println("Persona no encontrada");}
