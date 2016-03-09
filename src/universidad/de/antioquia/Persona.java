@@ -3,30 +3,46 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package universidad.de.antioquia;
+package universidaddeantioquia;
 
 /**
  *
- * @author Estudiante
+ * @author USER
  */
 public class Persona {
     public String nombre;
     public String sexo;
     public int edad;
+    public String apellido;
     java.util.Scanner l=new java.util.Scanner(System.in);
-    public Persona(String nombre, String sexo, int edad) {
+    
+    public Persona(String nombre, String sexo, int edad,String apellido) {
         this.nombre = nombre;
         this.sexo = sexo;
         this.edad = edad;
+        this.apellido=apellido;
+    }    
+
+    public Persona() {
+        nombre=null;
+        sexo=null;
+        edad=0;
     }
-    public Persona setpersona(){
-        System.out.println("Nombre:");
-        this.nombre=l.next();
-        System.out.println("Sexo:");
-        this.sexo=l.next();
-        System.out.println("Edad:");
-        this.edad=l.nextInt();
-        return this;
+
+    public String getApellido() {
+        return apellido;
+    }
+    
+    public String getNombre(){
+        return nombre;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public int getEdad() {
+        return edad;
     }
     
 }

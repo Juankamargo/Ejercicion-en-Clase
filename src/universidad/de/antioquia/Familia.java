@@ -1,60 +1,76 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package universidad.de.antioquia;
-
-/**
- *
- * @author Estudiante
- */
+package universidaddeantioquia;
 public class Familia {
-
-    private Persona Padre;
-    private Persona madre;
-    private Persona hijo1;
-    private Persona hijo2;
+    public Persona padre=new Persona();
+    public Persona madre=new Persona();
+    public Persona hijo1=new Persona();
+    public Persona hijo2=new Persona();
     public String apellido;
-
+    
     public Familia() {
-        this.Padre = null;
+        this.padre = null;
         this.madre = null;
         this.hijo1 = null;
         this.hijo2 = null;
         this.apellido = null;
     }
-
-    public Persona getPadre() {
-        return Padre;
-    }
-
-    public void setPadre(Persona Padre) {
-        this.Padre = Padre;
-    }
-
-    public Persona getMadre() {
-        return madre;
-    }
-
-    public void setMadre(Persona madre) {
+    public Familia(Persona Padre, Persona madre, Persona hijo1, Persona hijo2, String apellido) {
+        this.padre = Padre;
         this.madre = madre;
-    }
-
-    public Persona getHijo1() {
-        return hijo1;
-    }
-
-    public void setHijo1(Persona hijo1) {
         this.hijo1 = hijo1;
-    }
-
-    public Persona getHijo2() {
-        return hijo2;
-    }
-
-    public void setHijo2(Persona hijo2) {
         this.hijo2 = hijo2;
+        this.apellido = apellido;
     }
-
+    
+    public String getApellido() {
+        return apellido;
+    }
+    public String getNpadre() {
+        return padre.getNombre();
+    }
+    public String getNmadre() {
+        return madre.getNombre();
+    }
+    public String getN1() {
+        return hijo1.getNombre();
+    }
+    public String getN2() {
+        return hijo2.getNombre();
+    }
+    
+    
+    public int getEdadp(){
+        return padre.getEdad();
+    }
+    public int getEdadm(){
+        return madre.getEdad();
+    }
+    public int getEdad1(){
+        return hijo1.getEdad();
+    }
+    public int getEdad2(){
+        return hijo2.getEdad();
+    }
+    
+    
+    public String getSexo1(){
+        return hijo1.getSexo();
+    }
+    public String getSexo2(){
+        return hijo2.getSexo();
+    }
+    
+    public String getParentesco(String a){
+        if(a==padre.getNombre()){
+            return "Padre";
+        }
+        else if(a==madre.getNombre()){
+            return "Madre";
+        }
+        else if(a==hijo1.getNombre()){
+            return "Primer hijo";
+        }
+        else{
+            return "Segundo hijo";
+        }
+    }
 }
