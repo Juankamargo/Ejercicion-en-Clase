@@ -60,16 +60,16 @@ public class Familia {
     }
     
     public String getParentesco(String a){
-        if(a==padre.getNombre()){
+        if(a.equals(padre.getNombre())){
             return "Padre";
         }
-        else if(a==madre.getNombre()){
+        else if(a.equals(madre.getNombre())){
             return "Madre";
         }
-        else if(a==hijo1.getNombre()){
+        else if(a.equals(hijo1.getNombre())){
             return "Primer hijo";
         }
-        else{
+        else {
             return "Segundo hijo";
         }
     }
